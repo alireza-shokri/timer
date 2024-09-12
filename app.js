@@ -28,6 +28,7 @@ function lop_time(){
 
     if(time_sanj)
             sound()
+        
     }
 setInterval(lop_time,1000);
 
@@ -39,6 +40,8 @@ function click_start_clear(){
        $.getElementById('hour').disabled=true;
        $.getElementById('minut').disabled=true;
        btn.setAttribute('work','clear');
+       console.log( $.getElementById('minut').innerHTML);
+       
    }
    else clear()
    
@@ -70,15 +73,16 @@ function create(tadad){
             new_option.value='0'+i;
             new_option.innerHTML='0'+i;
         }
+        else{
+            new_option.value=i;
+            new_option.innerHTML=i;
+        }
+        
         if(new_option.value=='00'){
             new_option.hidden=true;
             new_option.selected=true;
         }
             
-        else{
-            new_option.value=i;
-            new_option.innerHTML=i;
-        }
         fragment.append(new_option)
     }
     return fragment;
